@@ -14,7 +14,7 @@
         <th>Photo</th>
         <th>Id</th>
         <th>Owner</th>
-        <th>Category</th>    
+        <th>Category</th>
         <th>Title</th>
         <th>body</th>
         <th>Created</th>
@@ -33,7 +33,7 @@
           <td><img height = '50' src="{{$post->photo ? $post->photo->file : '\images\1504035715download.png'}} " alt=""></td>
         <td>{{$post->id}}</td>
         <td>{{$post->user->name}}</td>
-        <td>{{$post->category_id}}</td>
+        <td>{{$post->category ? $post->category->name : 'Uncategorized'}}</td>
 
         <td> {{$post->photo_id}} </td>
         <td>{{$post->title}}</td>

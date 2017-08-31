@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Category;
 use App\Http\Requests\PostsCreateRequest;
 use App\Http\Requests;
 use App\Post;
@@ -35,7 +36,9 @@ class AdminPostsController extends Controller
     {
         //
 
-        return view('admin.posts.create');
+        $categories = Category::lists('name', 'id')->all();
+
+        return view('admin.posts.create', compact('categories'));
     }
 
     /**
@@ -54,7 +57,7 @@ class AdminPostsController extends Controller
 
       if($file = $request->file('photo_id')){
 
-      
+
 
         $name = time() . $file->getClientOriginalName();
 
