@@ -8,5 +8,49 @@
 
   <h1>Posts</h1>
 
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Photo</th>
+        <th>Id</th>
+        <th>Owner</th>
+        <th>Category</th>    
+        <th>Title</th>
+        <th>body</th>
+        <th>Created</th>
+        <th>Updated</th>
+
+      </tr>
+    </thead>
+    <tbody>
+
+      @if($posts)
+
+        @foreach($posts as $post)
+
+      <tr>
+
+          <td><img height = '50' src="{{$post->photo ? $post->photo->file : '\images\1504035715download.png'}} " alt=""></td>
+        <td>{{$post->id}}</td>
+        <td>{{$post->user->name}}</td>
+        <td>{{$post->category_id}}</td>
+
+        <td> {{$post->photo_id}} </td>
+        <td>{{$post->title}}</td>
+        <td>{{$post->body}}</td>
+        <td>{{$post->created_at->diffForhumans()}}</td>
+        <td>{{$post->updated_at->diffForhumans()}}</td>
+        </tr>
+
+    @endforeach
+  @endif
+
+    </tbody>
+  </table>
+
+  </div>
+
+
+
 
 @stop
