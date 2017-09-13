@@ -145,7 +145,9 @@ class AdminUsersController extends Controller
         }else {
 
           $input = $request->all();
+
           $input['password'] = bcrypt($request->password);
+
         }
 
 
@@ -156,7 +158,7 @@ class AdminUsersController extends Controller
 
           $file->move('images', $name);
 
-          $photo = Photo::create(['file']);
+          $photo = Photo::create(['file'=>$name]);
 
 
           $input['photo_id'] = $photo->id;
