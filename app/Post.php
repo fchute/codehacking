@@ -70,4 +70,10 @@ class Post extends Model
           return $this->hasMany('App\Comment');
 
         }
+
+
+        public function photoPlaceholder(){
+
+          return "This should be a placeholder";
+        }
 }

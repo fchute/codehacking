@@ -24,7 +24,7 @@ Route::get('/post/{id}',['as'=>'home.post', 'uses'=> 'AdminPostsController@post'
 
 
 
-    Route::group(['middleware'=> 'admin'], function(){
+Route::group(['middleware'=> 'admin'], function(){
 
       Route::get('/admin', function(){
 
